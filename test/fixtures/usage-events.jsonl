@@ -1,0 +1,4 @@
+{"ts":"2026-08-29T09:00:00Z","session_id":"sess-cli","model":"deepseek-v4-pro","usage":{"input_tokens":1000,"cache_hit_tokens":500,"output_tokens":100}}
+{"timestamp":"2026-08-29T17:00:00Z","sessionId":"sess-cli","model":"deepseek-v4-flash","usage":{"promptTokens":2000,"promptCacheHitTokens":1500,"completionTokens":300}}
+{"ts":"2026-08-29T09:30:00Z","model":"deepseek-v4-pro","usage":{"completion_tokens":50}}
+not json

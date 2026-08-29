@@ -1,0 +1,1 @@
+{"type":"llm_usage","ts":"2026-08-29T21:00:00Z","model":"deepseek-v4-flash","usage":{"prompt_tokens":1000,"prompt_cache_hit_tokens":600,"completion_tokens":80}}

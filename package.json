@@ -1,0 +1,62 @@
+{
+  "name": "dsh-spend-receipt",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness plugin: derive a citable append-only JSONL cost receipt from usage events or a session log, and report it through the spend_receipt tool",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "dsh-spend-receipt": "./bin/dsh-spend-receipt.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./rates": "./src/rates.js",
+    "./receipt": "./src/receipt.js",
+    "./summary": "./src/summary.js",
+    "./usage": "./src/usage.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "src",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwilson411/dsh-spend-receipt.git"
+  },
+  "homepage": "https://github.com/jwilson411/dsh-spend-receipt#readme",
+  "bugs": {
+    "url": "https://github.com/jwilson411/dsh-spend-receipt/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "cost",
+    "receipt",
+    "usage"
+  ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "^0.1.1-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "0.1.1-rc.2"
+  }
+}

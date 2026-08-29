@@ -1,0 +1,26 @@
+# The dsh-spend-receipt bundle patch.
+#
+# `dsh plugin --profile <name> add …` installs this package into the profile,
+# sees the `dsh.bundle.patch` field in its package.json, and appends the
+# package to the profile manifest's ordered `dsh.profile.bundles` list. This
+# file is then composed as one layer over the bundles below it (dsh-base and
+# the mode bundle) and under the profile's own cordis.patch.yml.
+#
+# One insert, one row: the receipt plugin. A later layer — the profile's
+# cordis.patch.yml or a `--patch` overlay — addresses the row by its `id` to
+# point the plugin at other paths. Note that an id-targeted patch replaces the
+# row's whole `config` rather than merging into it, so an override must restate
+# every field it means to keep.
+#
+# config:
+#   receiptPath  where receipt lines are appended (default:
+#                $DSH_SPEND_RECEIPT_PATH, else <cwd>/spend-receipt.jsonl)
+#   sessionLog   optional append-only session log to derive usage from
+#                (default: $DSH_SPEND_RECEIPT_SESSION_LOG, else unset — with no
+#                log the tool only reads what `recordUsage` already appended)
+#   sessionId    optional session id stamped on lines whose source event
+#                carries none (default: unset — such lines record `null`)
+
+- insert:
+    - id: spend-receipt
+      name: dsh-spend-receipt
